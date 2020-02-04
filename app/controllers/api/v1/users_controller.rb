@@ -10,18 +10,22 @@ class Api::V1::UsersController < ApplicationController
         render json: user, except: [:created_at, :updated_at]
     end
     
-    # def destroy
-    #     user = User.find(params[:id])
-    #     user.destroy
-    # end
+#    def show
+#         user = User.find(params[:id])
+        # user.map { |mat}
+        # render json: user, except: [:created_at, :updated_at], include: [:]
+
+#    end
+
+    def destroy
+        user = User.find(params[:id])
+        user.destroy
+    end
 
     private
     
     def user_params
-        params.require(:user).permit
-        # (
-            # :name, :title, :company, :phone_number, :email, :linkedin, :website, :address, :logo, :style
-        )
+        params.require(:user).permit(:name, :email, :gender, :age, :avatar, :phone_number, :city, :state, :smokes, :drinks, :weed, :drugs, :religion, :occupation, :college, :education_level, :kids, :relationship_type, :politics, :have_pets, :morning_night, :dress_style, :messy_neat, :general_planning, :vacation_planning, :vacation_type, :cat_dog, :coffee_tea, :summer_winter,:city_country_suburbs, :beach_mountain, :night_out_in, :diet, :extrovert_introvert, :love_language, :music, :play_instrument, :ideal_friday)
     end
 
 end
