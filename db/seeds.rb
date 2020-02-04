@@ -7,12 +7,8 @@
 
 require 'faker'
 
-#         landlord_id: Landlord.all.sample.id,
-#         tenant_id: Tenant.all.sample.id
-
-
 def smokes
-    smoke = ["Yes", "Sometimes", "Trying to quit", "No", "Prefer Not to Say"]
+    smoke = ["Often", "Sometimes", "Trying to quit", "Never", "Prefer Not to Say"]
 end
 
 def drinks
@@ -20,7 +16,7 @@ def drinks
 end
 
 def drugs
-    drug = ["Yes", "Socially", "Never", "Prefer Not to Say"]
+    drug = ["Often", "Socially", "Never", "Prefer Not to Say"]
 end
 
 def politics
@@ -40,11 +36,11 @@ def occupation
 end
 
 def relationship
-    type = ["Companion", "Dating", "Friendship", "Hookups", "Long-Term Relationship", "Marriage", "Not Sure", "Other"]
+    type = ["Companion", "Dating", "Friendship", "Hookups", "Long-Term Relationship", "Marriage", "Not Sure", "Unspecified", "Business/Networking"]
 end
 
 def pets
-    pet = ["Yes", "No", "No, but want to"]
+    pet = ["Yes", "No", "Not right now, maybe in the future"]
 end
 
 def morning_person
@@ -96,7 +92,7 @@ def beverage
 end
 
 def diet
-    diets = ["Kosher", "Vegetarian", "Vegan"]
+    diets = ["Kosher", "Vegetarian", "Vegan", "Gluten-free", "Pescatarian", "Nothing special, I'll eat anything"]
 end
 
 def music
@@ -138,9 +134,10 @@ end
 
 puts 'Destroying Users'
 User.destroy_all
+Match.destroy_all
 
 puts 'Creating Users'
-
+puts 'Creating Matches'
 #Women
 25.times do 
     User.create(
@@ -231,6 +228,13 @@ end
     )
 end
 
+25.times do 
+    Match.create(
+        user_id: User.all.sample.id,
+        potential_match_id: User.all.sample.id
+    )
+end
 
-# )
-# end
+#         landlord_id: Landlord.all.sample.id,
+#         tenant_id: Tenant.all.sample.id
+
