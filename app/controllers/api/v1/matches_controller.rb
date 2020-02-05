@@ -2,7 +2,9 @@ class Api::V1::MatchesController < ApplicationController
 
     def index
         matches = Match.all
-        render json: matches, except: [:created_at, :updated_at]
+        our_matches = matches.map { |match| {match_id: match.id, potential_match: (User.find(match.potential_match_id)), user_id: (User.find(match.user_id))} }
+        render json: our_matches, except: [:created_at, :updated_at]
+        # , includes: [:po]
     end
 
     def create
@@ -13,6 +15,7 @@ class Api::V1::MatchesController < ApplicationController
       def destroy
         match = Match.find(params[:id])
         match.destroy
+        render json: match, except: [:created_at, :updated_at]
     end
 
     private

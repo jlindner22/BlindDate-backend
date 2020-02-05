@@ -1,10 +1,3 @@
-
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
-
 require 'faker'
 
 def smokes
@@ -68,7 +61,7 @@ def love_languages
 end
 
 def extrovert_introvert
-    type = ["A little of both", "Extrovert", "Introvert", "Not Sure"]
+    type = ["A little of both", "Extrovert", "Introvert", "Depends on who you ask", "Not Sure"]
 end
 
 def season
@@ -119,7 +112,11 @@ def female_avatar_image
     "https://live.staticflickr.com/6213/6265933314_e82eee2239.jpg", "https://pcafalcons.com/wp-content/uploads/2018/02/wallpaper-love-photo-3-1080x675.jpg", "https://atxman.com/wp-content/uploads/2017/03/Back-to-Basics-of-Love.jpg", "https://c7.uihere.com/files/639/424/893/wine-glass-red-wine-beer-clip-art-cartoon-red-wine-thumb.jpg", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDcuw_XiLZe5Dx8BQUaaqgQ-mvsbdf9K5HWm-t7O7s7jslDIkmAA&s", 
     "https://previews.123rf.com/images/juliarstudio/juliarstudio1703/juliarstudio170300369/73501781-glasses-of-white-wine-icon-cartoon.jpg", "https://cdn.clipart.email/16ef9c8aa00bc375fde52f0f76f4f5b8_free-simple-white-wine-glass-imagefree-cartoon-clipart-_480-480.png",  "https://images-na.ssl-images-amazon.com/images/I/81PePZ7hicL._AC_SL1500_.jpg", "https://1843784937.rsc.cdn77.org/wp-content/uploads/2019/04/krabby-patty-400x200.jpg", "https://m.media-amazon.com/images/M/MV5BYTA1YjNjOWUtZjY3Ni00ZDk1LWFmMzktNjM1NTg0YzkwYTVmXkEyXkFqcGdeQXVyODI3MTM2NDY@._V1_.jpg", 
     "https://izzatunnisa.files.wordpress.com/2016/05/krabby-patty.png", "https://www.jing.fm/clipimg/detail/1-15481_food-clipart-ramen-cute-japanese-food-cartoon.png", "https://pusheen.com/wp-content/uploads/2019/01/pusheen-kind.jpg", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRP5zIHLQACewtvJlfU8mWrQH4ToaAwnVYlehD4pbLHT8Jw0n5vw&s", "https://clipartart.com/images/pusheen-the-cat-clipart-1.png", "https://img.favpng.com/25/12/7/i-am-pusheen-the-cat-i-am-pusheen-the-cat-drawing-gif-png-favpng-8pGdCLt0tjtjX47xf1xq5bRbF.jpg", 
-    "https://i.kym-cdn.com/photos/images/original/000/383/570/6eb.gif", "https://www.killyourdarlings.com.au/wp-content/uploads/2017/04/pusheen3.gif", "https://w0.pngwave.com/png/856/86/pusheen-cat-telegram-sticker-cat-png-clip-art.png", "https://www.netclipart.com/pp/m/56-567302_pusheen-apple-applepie-pie-manzana-sticker-sticker-pusheen.png", "https://www.netclipart.com/pp/m/390-3904345_hermione-chibi-enamel-pin-harry-potter-hermione-cartoon.png", "https://i.pinimg.com/originals/c8/dd/6c/c8dd6ce3ddd8632153a70659c9a6968b.png"
+    "https://i.kym-cdn.com/photos/images/original/000/383/570/6eb.gif", "https://www.killyourdarlings.com.au/wp-content/uploads/2017/04/pusheen3.gif", "https://w0.pngwave.com/png/856/86/pusheen-cat-telegram-sticker-cat-png-clip-art.png", "https://www.netclipart.com/pp/m/56-567302_pusheen-apple-applepie-pie-manzana-sticker-sticker-pusheen.png", "https://www.netclipart.com/pp/m/390-3904345_hermione-chibi-enamel-pin-harry-potter-hermione-cartoon.png", "https://i.pinimg.com/originals/c8/dd/6c/c8dd6ce3ddd8632153a70659c9a6968b.png",
+    "https://www.thesprucepets.com/thmb/wd4VS5A5UCHLF0IBG-DsVfrLypk=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/horse-galloping-in-grass-688899769-587673275f9b584db3a44cdf.jpg", "https://media.threatpost.com/wp-content/uploads/sites/103/2014/02/07023404/shutterstock_146544482.jpg", "https://images2.minutemediacdn.com/image/upload/c_fill,g_auto,h_1248,w_2220/f_auto,q_auto,w_1100/v1555303893/shape/mentalfloss/monster_primary_0.png", "https://www.rainforest-alliance.org/sites/default/files/styles/750w_585h/public/2016-09/three-toed-sloth.jpg?itok=uWF-NdZZ",
+    "https://www.thesmokinggun.com/sites/default/files/imagecache/175xUnlimited/photos/arielprincess19a.jpg", "https://vignette.wikia.nocookie.net/disney-princess-and-girls/images/6/64/Cinderella.jpg/revision/latest?cb=20190307020549", "https://upload.wikimedia.org/wikipedia/en/thumb/7/71/Princess_Jasmine_disney.png/220px-Princess_Jasmine_disney.png", "https://i.pinimg.com/originals/42/80/66/42806676379a918d68c0cfb4b0e6f755.png", "https://www.disneyclips.com/images4/images/ariel-mermaid.png",
+    "https://i.pinimg.com/originals/a0/c0/76/a0c0768f4a38dbc71e7d391224496af0.png", "https://cdn.vox-cdn.com/thumbor/hyA560LW9lkdyANSqeLc3kK8oJw=/0x0:1920x800/1200x800/filters:focal(506x118:812x424)/cdn.vox-cdn.com/uploads/chorus_image/image/52005641/MoanaPortrait.0.jpeg", "https://images.theconversation.com/files/279768/original/file-20190617-118505-9ov3gw.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=926&fit=clip", "https://cdn.vox-cdn.com/thumbor/a-G6rQjMaRbWlav4pE0yToTaYbY=/1400x0/filters:no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/12651459/SerenaWilliamsshortcatsuit.jpg",
+    "https://i.ytimg.com/vi/h_QyTcPD1G4/maxresdefault.jpg"
 ]
 end
 
@@ -128,11 +125,16 @@ def male_avatar_image
     "https://store-images.s-microsoft.com/image/apps.11193.13596181562839796.05c8b7bf-1254-4b66-b463-deba2935c676.18c9ef3e-cd00-44de-b17c-5855bda0f214?mode=scale&q=90&h=200&w=200&background=%23FFFFFF", "https://images-na.ssl-images-amazon.com/images/I/71BkHeJlG6L._AC_SX425_.jpg", "https://previews.123rf.com/images/lkeskinen/lkeskinen1704/lkeskinen170404289/76149428-cartoon-image-of-beer-in-glass-an-artistic-freehand-picture-.jpg", "https://banner2.cleanpng.com/20180219/zqq/kisspng-hamburger-fast-food-restaurant-junk-food-kfc-cartoon-french-fries-5a8b6353d9a269.5412864515190843718914.jpg",
     "https://ctl.s6img.com/society6/img/3RHsnTKedD0M52TM_ZlK3vOGfTM/w_700/prints/~artwork/s6-original-art-uploads/society6/uploads/misc/f6e13c9657e143a682806e27466894b8/~~/fries-fun-cartoon-chips-character-characters-cute-fast-food-prints.jpg", "https://1843784937.rsc.cdn77.org/wp-content/uploads/2019/04/krabby-patty-400x200.jpg", "https://m.media-amazon.com/images/M/MV5BYTA1YjNjOWUtZjY3Ni00ZDk1LWFmMzktNjM1NTg0YzkwYTVmXkEyXkFqcGdeQXVyODI3MTM2NDY@._V1_.jpg", "https://pusheen.com/wp-content/uploads/2019/01/pusheen-kind.jpg", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRP5zIHLQACewtvJlfU8mWrQH4ToaAwnVYlehD4pbLHT8Jw0n5vw&s",
     "https://media0.giphy.com/media/npQihcCpeVeWiFRLb3/source.gif", "https://clipartart.com/images/pusheen-the-cat-clipart-1.png", "https://i.kym-cdn.com/photos/images/original/000/383/570/6eb.gif", "https://www.killyourdarlings.com.au/wp-content/uploads/2017/04/pusheen3.gif", "https://i.ytimg.com/vi/EXxAJ5mNmfs/hqdefault.jpg", "https://s.tcdn.co/e78/90b/e7890b10-1c4c-3cd4-a176-4e1010807ace/5.png", "https://www.freepngimg.com/thumb/facebook/88352-icons-pusheen-cartoon-computer-cat-bird.png", "https://i.pinimg.com/originals/64/0e/4b/640e4b8dc6425dc0c86628fea5c6b913.jpg", "https://media2.giphy.com/media/WMJYyhMzAUNaM/source.gif",
-    "https://cdn.imgbin.com/15/25/20/imgbin-lineage-ii-computer-servers-cartoon-video-gaming-clan-pusheen-cat-pusheen-N5VMGV4qUm0xuK0DcGLU044a0.jpg", "https://i.pinimg.com/474x/a5/73/db/a573db1be3bcd5ca628200c0461a197e.jpg", "https://i.pinimg.com/474x/2e/13/26/2e1326fef377b7970952fed074064876.jpg", "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/d1961948-b00f-446a-8d83-79e6c0a14981/d3y5ug1-16f97519-3a8c-449f-a651-8d6003996cc4.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2QxOTYxOTQ4LWIwMGYtNDQ2YS04ZDgzLTc5ZTZjMGExNDk4MVwvZDN5NXVnMS0xNmY5NzUxOS0zYThjLTQ0OWYtYTY1MS04ZDYwMDM5OTZjYzQucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.xl8FG_L2xktin7mQLaM1qalkMtNJfNbh7nxrHKBcRh8"
+    "https://cdn.imgbin.com/15/25/20/imgbin-lineage-ii-computer-servers-cartoon-video-gaming-clan-pusheen-cat-pusheen-N5VMGV4qUm0xuK0DcGLU044a0.jpg", "https://i.pinimg.com/474x/a5/73/db/a573db1be3bcd5ca628200c0461a197e.jpg", "https://i.pinimg.com/474x/2e/13/26/2e1326fef377b7970952fed074064876.jpg", "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/d1961948-b00f-446a-8d83-79e6c0a14981/d3y5ug1-16f97519-3a8c-449f-a651-8d6003996cc4.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2QxOTYxOTQ4LWIwMGYtNDQ2YS04ZDgzLTc5ZTZjMGExNDk4MVwvZDN5NXVnMS0xNmY5NzUxOS0zYThjLTQ0OWYtYTY1MS04ZDYwMDM5OTZjYzQucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.xl8FG_L2xktin7mQLaM1qalkMtNJfNbh7nxrHKBcRh8",
+    "https://www.rainforest-alliance.org/sites/default/files/styles/750w_585h/public/2016-09/three-toed-sloth.jpg?itok=uWF-NdZZ", "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fcdn-image.travelandleisure.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F1600x1000%2Fpublic%2F1539963100%2Fsloth-SLOTH1018.jpg%3Fitok%3Dn6IuFyx_&w=400&c=sc&poi=face&q=85", "https://media.wnyc.org/i/800/0/c/85/1/485198177.jpg", "https://lh3.googleusercontent.com/proxy/FCeZDu1ANd-F6BtwgHDc5rd7NvcW9WZy7QBA_IutdHiFo7r3Yr_ONEf94iPBD_mP6ofVSjwrR-b97izX09TZRL7UrnTSyH9HcbjWLtVThm0ZNXY8LqT-W6VrlPNIQUtEjpVp867h3G2EmFTmLHXjgyqZCpg", 
+    "https://www.nme.com/wp-content/uploads/2019/11/Screenshot-2019-11-13-at-07.33.14.png", "https://i.pinimg.com/originals/41/61/22/416122f0fdb2d3cbc8ac00458c2a5533.jpg", "https://vignette.wikia.nocookie.net/disney/images/f/f3/Charmingdisney.jpeg/revision/latest?cb=20120725203430", "https://vignette.wikia.nocookie.net/disney/images/b/b6/Phillip.png/revision/latest?cb=20190109213010", "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/5a4bc4a3-82a8-49a3-94b3-fdc2e25fe721/dmpik3-08eba431-8434-4960-a7de-f560f032c74b.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzVhNGJjNGEzLTgyYTgtNDlhMy05NGIzLWZkYzJlMjVmZTcyMVwvZG1waWszLTA4ZWJhNDMxLTg0MzQtNDk2MC1hN2RlLWY1NjBmMDMyYzc0Yi5wbmcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.xoP1EZ9r7f_cA7UimZdh4V6S2ps0Gc2Sx0CaOQQ2Q8E",
+    "https://vignette.wikia.nocookie.net/deadliestfiction/images/7/70/Prince_Charming.jpg/revision/latest?cb=20190803002322", "https://i.pinimg.com/originals/fd/3b/03/fd3b0341a6c252310f5a9aeb2b61f662.png", "https://vignette.wikia.nocookie.net/dcix/images/3/39/Shrek.jpg/revision/latest?cb=20170501174654", "https://ohmy.disney.com/wp-content/uploads/2014/11/Meeko-eats-cookies.jpg", "https://vignette.wikia.nocookie.net/disney/images/b/bb/Profile_-_Aladdin.png/revision/latest?cb=20190829033153", "https://ydn-wpengine.netdna-ssl.com/wp-content/uploads/2019/12/mhockey_Credit-muscosportsphotos.com_.jpg",
+    "https://cpe-prod.usabaseball.com/assets/images/4/1/4/312639414/cuts/793x400/cut.jpg", "https://cdn.vox-cdn.com/thumbor/M6dxidIS1-ndgq-HKONbYpvn5cA=/0x0:4269x2846/1200x800/filters:focal(1641x699:2323x1381)/cdn.vox-cdn.com/uploads/chorus_image/image/65478105/usa_today_13512792.0.jpg", "https://upload.wikimedia.org/wikipedia/commons/8/8e/Roger_Federer_2012_Indian_Wells.jpg", "https://i.ytimg.com/vi/5xT7Bx73KXg/maxresdefault.jpg"
 ]
 end
 
 puts 'Destroying Users'
+puts 'Destroying Matches'
 User.destroy_all
 Match.destroy_all
 
@@ -228,13 +230,10 @@ end
     )
 end
 
-25.times do 
-    Match.create(
-        user_id: User.all.sample.id,
-        potential_match_id: User.all.sample.id
-    )
-end
-
-#         landlord_id: Landlord.all.sample.id,
-#         tenant_id: Tenant.all.sample.id
+# 25.times do 
+#     Match.create(
+#         user_id: User.all.sample.id,
+#         potential_match_id: User.all.sample.id
+#     )
+# end
 
