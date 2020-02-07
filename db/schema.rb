@@ -88,15 +88,8 @@ ActiveRecord::Schema.define(version: 2020_01_29_032350) do
     t.string "ideal_friday"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-<<<<<<< HEAD
     t.string "username"
     t.string "password_digest"
   end
 
 end
-=======
-  end
-
-end
-
->>>>>>> f4f4a0fe1f640a2a95c379d70ffa6ad99a2f147d

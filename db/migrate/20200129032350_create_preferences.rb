@@ -2,10 +2,6 @@ class CreatePreferences < ActiveRecord::Migration[6.0]
   def change
     create_table :preferences do |t|
       t.integer :user_id
-<<<<<<< HEAD
-=======
-      # t.integer :potential_match_id
->>>>>>> f4f4a0fe1f640a2a95c379d70ffa6ad99a2f147d
       t.string :gender
       t.integer :age
       t.string :city
