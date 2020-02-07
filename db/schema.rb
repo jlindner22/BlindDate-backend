@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2020_02_06_152108) do
+=======
+ActiveRecord::Schema.define(version: 2020_01_29_032350) do
+>>>>>>> f4f4a0fe1f640a2a95c379d70ffa6ad99a2f147d
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -84,8 +88,15 @@ ActiveRecord::Schema.define(version: 2020_02_06_152108) do
     t.string "ideal_friday"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+<<<<<<< HEAD
     t.string "username"
     t.string "password_digest"
   end
 
 end
+=======
+  end
+
+end
+
+>>>>>>> f4f4a0fe1f640a2a95c379d70ffa6ad99a2f147d

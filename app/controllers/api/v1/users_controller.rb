@@ -6,6 +6,7 @@ class Api::V1::UsersController < ApplicationController
     end
 
     def create
+<<<<<<< HEAD
         user = User.new(
             username: params[:username],
             password: params[:password],
@@ -16,6 +17,10 @@ class Api::V1::UsersController < ApplicationController
         else
             render json: {errors: user.errors.full_messages}
         end
+=======
+        user = User.create(user_params)
+        render json: user, except: [:created_at, :updated_at]
+>>>>>>> f4f4a0fe1f640a2a95c379d70ffa6ad99a2f147d
     end
     
 #    def show
@@ -25,6 +30,7 @@ class Api::V1::UsersController < ApplicationController
 
 #    end
 
+<<<<<<< HEAD
 def update 
     user = User.find(params[:id])
     # if 
@@ -38,6 +44,8 @@ def update
     # end 
 end 
 
+=======
+>>>>>>> f4f4a0fe1f640a2a95c379d70ffa6ad99a2f147d
     def destroy
         user = User.find(params[:id])
         user.destroy
@@ -46,7 +54,11 @@ end
     private
     
     def user_params
+<<<<<<< HEAD
         params.require(:user).permit(:username, :password, :name, :email, :gender, :age, :avatar, :phone_number, :city, :state, :smokes, :drinks, :weed, :drugs, :religion, :occupation, :college, :education_level, :kids, :relationship_type, :politics, :have_pets, :morning_night, :dress_style, :messy_neat, :general_planning, :vacation_planning, :vacation_type, :cat_dog, :coffee_tea, :summer_winter,:city_country_suburbs, :beach_mountain, :night_out_in, :diet, :extrovert_introvert, :love_language, :music, :play_instrument, :ideal_friday)
+=======
+        params.require(:user).permit(:name, :email, :gender, :age, :avatar, :phone_number, :city, :state, :smokes, :drinks, :weed, :drugs, :religion, :occupation, :college, :education_level, :kids, :relationship_type, :politics, :have_pets, :morning_night, :dress_style, :messy_neat, :general_planning, :vacation_planning, :vacation_type, :cat_dog, :coffee_tea, :summer_winter,:city_country_suburbs, :beach_mountain, :night_out_in, :diet, :extrovert_introvert, :love_language, :music, :play_instrument, :ideal_friday)
+>>>>>>> f4f4a0fe1f640a2a95c379d70ffa6ad99a2f147d
     end
 
 end
