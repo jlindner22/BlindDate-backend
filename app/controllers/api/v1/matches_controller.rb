@@ -4,10 +4,6 @@ class Api::V1::MatchesController < ApplicationController
         matches = Match.all
         our_matches = matches.map { |match| {match_id: match.id, potential_match: (User.find(match.potential_match_id)), user_id: (User.find(match.user_id))} }
         render json: our_matches, except: [:created_at, :updated_at]
-<<<<<<< HEAD
-=======
-        # , includes: [:po]
->>>>>>> f4f4a0fe1f640a2a95c379d70ffa6ad99a2f147d
     end
 
     def create
