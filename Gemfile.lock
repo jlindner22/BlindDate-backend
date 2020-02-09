@@ -56,10 +56,7 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
       zeitwerk (~> 2.2)
-<<<<<<< HEAD
     bcrypt (3.1.13)
-=======
->>>>>>> f4f4a0fe1f640a2a95c379d70ffa6ad99a2f147d
     bootsnap (1.4.5)
       msgpack (~> 1.0)
     builder (3.2.4)
@@ -157,10 +154,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-<<<<<<< HEAD
   bcrypt (~> 3.1.7)
-=======
->>>>>>> f4f4a0fe1f640a2a95c379d70ffa6ad99a2f147d
   bootsnap (>= 1.4.2)
   byebug
   faker

@@ -15,11 +15,7 @@ gem 'faker'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
-<<<<<<< HEAD
  gem 'bcrypt', '~> 3.1.7'
-=======
-# gem 'bcrypt', '~> 3.1.7'
->>>>>>> f4f4a0fe1f640a2a95c379d70ffa6ad99a2f147d
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
