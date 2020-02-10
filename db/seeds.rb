@@ -133,10 +133,10 @@ def male_avatar_image
 ]
 end
 
-puts 'Destroying Users'
 puts 'Destroying Matches'
-User.destroy_all
+puts 'Destroying Users'
 Match.destroy_all
+User.destroy_all
 
 puts 'Creating Users'
 puts 'Creating Matches'

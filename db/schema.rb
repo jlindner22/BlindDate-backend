@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2020_02_06_152108) do
-=======
-ActiveRecord::Schema.define(version: 2020_01_29_032350) do
->>>>>>> f4f4a0fe1f640a2a95c379d70ffa6ad99a2f147d
+ActiveRecord::Schema.define(version: 2020_02_10_152544) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,7 +25,7 @@ ActiveRecord::Schema.define(version: 2020_01_29_032350) do
   create_table "preferences", force: :cascade do |t|
     t.integer "user_id"
     t.string "gender"
-    t.integer "age"
+    t.integer "minimum_age"
     t.string "city"
     t.string "state"
     t.string "smokes"
@@ -45,6 +41,7 @@ ActiveRecord::Schema.define(version: 2020_01_29_032350) do
     t.string "diet"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "maximum_age"
   end
 
   create_table "users", force: :cascade do |t|
@@ -53,7 +50,7 @@ ActiveRecord::Schema.define(version: 2020_01_29_032350) do
     t.string "gender"
     t.integer "age"
     t.string "avatar"
-    t.integer "phone_number"
+    t.bigint "phone_number"
     t.string "city"
     t.string "state"
     t.string "smokes"
