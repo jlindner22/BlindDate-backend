@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_10_152544) do
+ActiveRecord::Schema.define(version: 2020_02_12_015637) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,24 +24,24 @@ ActiveRecord::Schema.define(version: 2020_02_10_152544) do
 
   create_table "preferences", force: :cascade do |t|
     t.integer "user_id"
-    t.string "gender"
-    t.integer "minimum_age"
+    t.string "gender", default: "All"
+    t.integer "minimum_age", default: 0
     t.string "city"
-    t.string "state"
-    t.string "smokes"
-    t.string "drinks"
-    t.boolean "weed"
-    t.string "drugs"
-    t.string "religion"
-    t.string "education_level"
-    t.boolean "kids"
-    t.string "relationship_type"
-    t.string "politics"
-    t.string "have_pets"
-    t.string "diet"
+    t.string "state", default: "All"
+    t.string "smokes", default: "All"
+    t.string "drinks", default: "All"
+    t.string "drugs", default: "All"
+    t.string "religion", default: "All"
+    t.string "education_level", default: "All"
+    t.string "relationship_type", default: "All"
+    t.string "politics", default: "All"
+    t.string "have_pets", default: "All"
+    t.string "diet", default: "All"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "maximum_age"
+    t.integer "maximum_age", default: 100
+    t.string "kids", default: "All"
+    t.string "weed", default: "All"
   end
 
   create_table "users", force: :cascade do |t|
@@ -55,13 +55,11 @@ ActiveRecord::Schema.define(version: 2020_02_10_152544) do
     t.string "state"
     t.string "smokes"
     t.string "drinks"
-    t.boolean "weed"
     t.string "drugs"
     t.string "religion"
     t.string "occupation"
     t.string "college"
     t.string "education_level"
-    t.boolean "kids"
     t.string "relationship_type"
     t.string "politics"
     t.string "have_pets"
@@ -87,6 +85,8 @@ ActiveRecord::Schema.define(version: 2020_02_10_152544) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "username"
     t.string "password_digest"
+    t.string "kids"
+    t.string "weed"
   end
 
 end
