@@ -41,7 +41,7 @@ def morning_person
 end
 
 def dress
-    style = ["Casual and comfortable, nothing too exciting", "Bold, I like to stand out"]
+    style = ["Casual and comfortable, nothing too exciting", "Bold, I like to stand out", "It depends on the day"]
 end
 
 def neat
@@ -61,7 +61,7 @@ def love_languages
 end
 
 def extrovert_introvert
-    type = ["A little of both", "Extrovert", "Introvert", "Depends on who you ask", "Not Sure"]
+    type = ["Somewhere in the middle", "Extrovert", "Introvert", "Depends on who you ask", "Not Sure"]
 end
 
 def season
@@ -104,8 +104,16 @@ def vacation_type
     type = ["Beach", "Educational tour", "Cruise", "Resort", "Staycation", "City trip", "Lazy vacation", "Camping", "Adventure vacation", "Hiking", "Spa vacation", "Group travel", "Food tour"]
 end
 
+def kids
+    kids = ["Yes", "No"]
+end
+
+def weed
+    weed = ["Yes", "No"]
+end
+
 def female_avatar_image
-    images = ["https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80", "https://www.redcross.org/content/dam/redcross/get-help/water-safety/beaches-open-water-hero-1534x1678.jpg.transform/768/q70/feature/image.jpegv", "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fpeopledotcom.files.wordpress.com%2F2018%2F08%2Fbeach.jpg", "https://www.planetware.com/photos-large/USHI/hawaii-honolulu-beaches-oahu-kailua-beach.jpg", 
+    images = ["https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80", 
     "https://images.homedepot-static.com/productImages/612ae505-9daf-45c3-ac16-67f97dcb251d/svn/globalrose-flower-bouquets-prime-100-red-roses-64_1000.jpg", "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/salmon-rose-rose-color-meanings-1548273759.jpg?crop=1.00xw:0.667xh;0,0.0633xh&resize=480:*", "https://cdn.pixabay.com/photo/2017/06/18/21/37/rose-2417334__340.jpg", "https://s7img.ftdi.com/is/image/ProvideCommerce/30010137_MAC?$proflowers-hero-lv-new$",
     "https://www.edenbrothers.com/store/media/Bulbs-Flowers/resized/NAWH%20112-1225-1_medium.jpg", "https://images.homedepot-static.com/productImages/8bf10d93-f82e-4dad-9947-2078a2f12704/svn/van-bourgondien-flower-bulbs-89286-64_1000.jpg", "https://images.unsplash.com/photo-1546238232-20216dec9f72?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80", "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AACPW4S.img?h=552&w=750&m=6&q=60&u=t&o=f&l=f&x=992&y=672", 
     "https://vetstreet.brightspotcdn.com/dims4/default/13c68ee/2147483647/crop/0x0%2B0%2B0/resize/645x380/quality/90/?url=https%3A%2F%2Fvetstreet-brightspot.s3.amazonaws.com%2F45%2F9a60c0a8bf11e0a0d50050568d634f%2Ffile%2Fmalitpoo-3-645mk070111.jpg", "https://www.k9web.com/wp-content/uploads/2019/05/Maltipoo-3-370x449.jpg", "https://furrybabiesinc.com/wp-content/uploads/2018/01/maltipoo-puppy.jpg", "https://i.ytimg.com/vi/Ep3jK1bZrB8/maxresdefault.jpg", "https://upload.wikimedia.org/wikipedia/en/thumb/2/2b/Kim_Possible_%28character_design%29.png/220px-Kim_Possible_%28character_design%29.png",
@@ -139,9 +147,9 @@ Match.destroy_all
 User.destroy_all
 
 puts 'Creating Users'
-puts 'Creating Matches'
+# puts 'Creating Matches'
 #Women
-25.times do 
+30.times do 
     User.create(
         name: Faker::Name.female_first_name, 
         email: "jenlindner22@gmail.com",
@@ -153,13 +161,13 @@ puts 'Creating Matches'
         state: Faker::Address.state,
         smokes: smokes.sample,
         drinks: drinks.sample,
-        weed: Faker::Boolean.boolean,
+        weed: weed.sample,
         drugs: drugs.sample,
         religion: religion.sample, 
         occupation: occupation.sample,
         college: Faker::University.name,
         education_level: education_level.sample,
-        kids: Faker::Boolean.boolean,
+        kids: kids.sample,
         relationship_type: relationship.sample,
         politics: politics.sample,
         have_pets: pets.sample,
@@ -180,13 +188,14 @@ puts 'Creating Matches'
         love_language: love_languages.sample,
         music: music.sample,
         play_instrument: Faker::Boolean.boolean,
-        ideal_friday: friday.sample
-        # password: "123"
-    )
+        ideal_friday: friday.sample,
+        password: "123",
+        username: Faker::Lorem.word
+        )
 end
 
 #Men
-25.times do 
+30.times do 
     User.create(
         name: Faker::Name.male_first_name,
         email: "jenlindner22@gmail.com",
@@ -198,13 +207,13 @@ end
         state: Faker::Address.state,
         smokes: smokes.sample,
         drinks: drinks.sample,
-        weed: Faker::Boolean.boolean,
+        weed: weed.sample,
         drugs: drugs.sample,
         religion: religion.sample, 
         occupation: occupation.sample,
         college: Faker::University.name,
         education_level: education_level.sample,
-        kids: Faker::Boolean.boolean,
+        kids: kids.sample,
         relationship_type: relationship.sample,
         politics: politics.sample,
         have_pets: pets.sample,
@@ -225,8 +234,9 @@ end
         love_language: love_languages.sample,
         music: music.sample,
         play_instrument: Faker::Boolean.boolean,
-        ideal_friday: friday.sample
-        # password: "123"
+        ideal_friday: friday.sample,
+        password: "123",
+        username: Faker::Lorem.word
     )
 end
 
