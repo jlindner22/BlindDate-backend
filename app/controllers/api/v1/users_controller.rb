@@ -10,7 +10,6 @@ class Api::V1::UsersController < ApplicationController
             username: params[:username],
             password: params[:password],
         )
-        # user = User.new(user_params)
         if user.save 
             render json: user, except: [:created_at, :updated_at]
         else
@@ -25,15 +24,8 @@ class Api::V1::UsersController < ApplicationController
 
 def update 
     user = User.find(params[:id])
-    # if 
     user.update(user_params)
     render json: user, except: [:created_at, :updated_at]
-
-    #     redirect_to tenant_path(tenant)
-    # else 
-    #     flash[:errors] = tenant.errors.full_messages
-    #     redirect_to edit_tenant_path(tenant)
-    # end 
 end 
 
     def destroy
