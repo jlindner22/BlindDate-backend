@@ -3,10 +3,6 @@ class CreateUsers < ActiveRecord::Migration[6.0]
     create_table :users do |t|
       t.string :name
       t.string :email
-<<<<<<< HEAD
-=======
-      # t.string :password_digest
->>>>>>> f4f4a0fe1f640a2a95c379d70ffa6ad99a2f147d
       t.string :gender
       t.integer :age
       t.string :avatar
