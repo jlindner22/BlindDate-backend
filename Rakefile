@@ -2,5 +2,7 @@
 # for example lib/tasks/capistrano.rake, and they will automatically be available to Rake.
 
 require_relative 'config/application'
+# require "capistrano/datadog"
+# set :datadog_api_key, "d061ad3eb0e5f96ed503b1e3f38d2f1f"
 
 Rails.application.load_tasks
