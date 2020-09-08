@@ -5,5 +5,5 @@ Datadog.configure do |c|
     c.service = 'blinddate'
     c.analytics.enabled = true
     # This will activate auto-instrumentation for Rails
-    c.use :rails, options
-  end
+    c.use :rails, log_injection: true
+end
