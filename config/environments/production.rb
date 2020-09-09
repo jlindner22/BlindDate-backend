@@ -104,48 +104,48 @@ Rails.application.configure do
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
 
 
-  
+
 #datadog config 108-125
 
-  # # Lograge config
-  # config.lograge.enabled = true
+  # Lograge config
+  config.lograge.enabled = true
 
-  # # This specifies to log in JSON format
-  # config.lograge.formatter = Lograge::Formatters::Json.new
+  # This specifies to log in JSON format
+  config.lograge.formatter = Lograge::Formatters::Json.new
   
-  # ## Disables log coloration
-  # config.colorize_logging = false
+  ## Disables log coloration
+  config.colorize_logging = false
   
-  # # Log to a dedicated file
-  # config.lograge.logger = ActiveSupport::Logger.new(File.join(Rails.root, 'log', "#{Rails.env}.log"))
+  # Log to a dedicated file
+  config.lograge.logger = ActiveSupport::Logger.new(File.join(Rails.root, 'log', "#{Rails.env}.log"))
   
-  # # This is useful if you want to log query parameters
-  # config.lograge.custom_options = lambda do |event|
-  #     { :ddsource => 'ruby',
-  #       :params => event.payload[:params].reject { |k| %w(controller action).include? k }
-  #     }
-  # end
+  # This is useful if you want to log query parameters
+  config.lograge.custom_options = lambda do |event|
+      { :ddsource => 'ruby',
+        :params => event.payload[:params].reject { |k| %w(controller action).include? k }
+      }
+  end
 
 #tracing
-# require 'ddtrace'
-# require 'logger'
+require 'ddtrace'
+require 'logger'
 
-# ENV['DD_ENV'] = 'prod'
-# ENV['DD_SERVICE'] = 'blinddate'
-# ENV['DD_VERSION'] = '2.5.17'
+ENV['DD_ENV'] = 'prod'
+ENV['DD_SERVICE'] = 'blinddate'
+ENV['DD_VERSION'] = '2.5.17'
 
-# logger = Logger.new(STDOUT)
-# logger.progname = 'my_app'
-# logger.formatter  = proc do |severity, datetime, progname, msg|
-#   "[#{datetime}][#{progname}][#{severity}][#{Datadog.tracer.active_correlation}] #{msg}\n"
-# end
+logger = Logger.new(STDOUT)
+logger.progname = 'my_app'
+logger.formatter  = proc do |severity, datetime, progname, msg|
+  "[#{datetime}][#{progname}][#{severity}][#{Datadog.tracer.active_correlation}] #{msg}\n"
+end
 
-# # When no trace is active
-# logger.warn('This is an untraced operation.')
-# # [2019-01-16 18:38:41 +0000][my_app][WARN][dd.env=production dd.service=billing-api dd.version=2.5.17 dd.trace_id=0 dd.span_id=0] This is an untraced operation.
+# When no trace is active
+logger.warn('This is an untraced operation.')
+# [2019-01-16 18:38:41 +0000][my_app][WARN][dd.env=production dd.service=billing-api dd.version=2.5.17 dd.trace_id=0 dd.span_id=0] This is an untraced operation.
 
-# # When a trace is active
-# Datadog.tracer.trace('my.operation') { logger.warn('This is a traced operation.') }
-# # [2019-01-16 18:38:41 +0000][my_app][WARN][dd.env=production dd.service=billing-api dd.version=2.5.17 dd.trace_id=8545847825299552251 dd.span_id=3711755234730770098] This is a traced operation.
+# When a trace is active
+Datadog.tracer.trace('my.operation') { logger.warn('This is a traced operation.') }
+# [2019-01-16 18:38:41 +0000][my_app][WARN][dd.env=production dd.service=billing-api dd.version=2.5.17 dd.trace_id=8545847825299552251 dd.span_id=3711755234730770098] This is a traced operation.
 
 end
