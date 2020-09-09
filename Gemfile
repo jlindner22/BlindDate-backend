@@ -29,7 +29,6 @@ gem 'rack-cors'
 
 #datadog tracing
 gem 'ddtrace'
-
 gem 'lograge'
 
 group :development, :test do
