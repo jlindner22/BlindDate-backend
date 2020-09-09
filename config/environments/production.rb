@@ -157,7 +157,7 @@ Datadog.configure { |c| c.analytics_enabled = true }
        # To preserve precision during JSON serialization, use strings for large numbers
        :env => Datadog.tracer.active_correlation.env,
        :service => Datadog.tracer.active_correlation.service,
-       :version => Datadog.tracer.active_correlation.version
+       :version => Datadog.tracer.active_correlation.version,
        :trace_id => Datadog.tracer.active_correlation.trace_id,
        :span_id => Datadog.tracer.active_correlation.span_id,
      },
