@@ -4,7 +4,7 @@ Rails.application.configure do
   #datadog
   config.log_tags = [proc { Datadog.tracer.active_correlation.to_s }]
 
-  
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
@@ -111,38 +111,6 @@ Rails.application.configure do
 
 #datadog config 108-125
 
-  # Lograge config
-  config.lograge.enabled = true
-
-  # This specifies to log in JSON format
-  config.lograge.formatter = Lograge::Formatters::Json.new
-  
-  ## Disables log coloration
-  config.colorize_logging = false
-  
-  # Log to a dedicated file
-  config.lograge.logger = ActiveSupport::Logger.new(File.join(Rails.root, 'log', "#{Rails.env}.log"))
-  
-  # This is useful if you want to log query parameters
-  config.lograge.custom_options = lambda do |event|
-    # Retrieves trace information for current thread
-    correlation = Datadog.tracer.active_correlation
-    {
-      # Adds IDs as tags to log output
-      :dd => {
-        # To preserve precision during JSON serialization, use strings for large numbers
-        :trace_id => correlation.trace_id.to_s,
-        :span_id => correlation.span_id.to_s,
-        :env => correlation.env.to_s,
-        :service => correlation.service.to_s,
-        :version => correlation.version.to_s
-      },
-      :ddsource => ["ruby"],
-      :params => event.payload[:params].reject { |k| %w(controller action).include? k }
-    }
-  end
-  
-
 #tracing
 require 'ddtrace'
 require 'logger'
@@ -152,7 +120,7 @@ ENV['DD_SERVICE'] = 'blinddate'
 ENV['DD_VERSION'] = '2.5.17'
 
 logger = Logger.new(STDOUT)
-logger.progname = 'my_app'
+logger.progname = 'blinddate'
 logger.formatter  = proc do |severity, datetime, progname, msg|
   "[#{datetime}][#{progname}][#{severity}][#{Datadog.tracer.active_correlation}] #{msg}\n"
 end
@@ -166,5 +134,36 @@ Datadog.tracer.trace('my.operation') { logger.warn('This is a traced operation.'
 # [2019-01-16 18:38:41 +0000][my_app][WARN][dd.env=production dd.service=billing-api dd.version=2.5.17 dd.trace_id=8545847825299552251 dd.span_id=3711755234730770098] This is a traced operation.
 
 Datadog.configure { |c| c.analytics_enabled = true }
+
+ # Lograge config
+ config.lograge.enabled = true
+
+ # This specifies to log in JSON format
+ config.lograge.formatter = Lograge::Formatters::Json.new
+ 
+ ## Disables log coloration
+ config.colorize_logging = false
+ 
+ # Log to a dedicated file
+ config.lograge.logger = ActiveSupport::Logger.new(File.join(Rails.root, 'log', "#{Rails.env}.log"))
+ 
+ # This is useful if you want to log query parameters
+ config.lograge.custom_options = lambda do |event|
+   # Retrieves trace information for current thread
+   correlation = Datadog.tracer.active_correlation
+   {
+     # Adds IDs as tags to log output
+     :dd => {
+       # To preserve precision during JSON serialization, use strings for large numbers
+       :env => Datadog.tracer.active_correlation.env,
+       :service => Datadog.tracer.active_correlation.service,
+       :version => Datadog.tracer.active_correlation.version
+       :trace_id => Datadog.tracer.active_correlation.trace_id,
+       :span_id => Datadog.tracer.active_correlation.span_id,
+     },
+     :ddsource => ["ruby"],
+     :params => event.payload[:params].reject { |k| %w(controller action).include? k }
+   }
+ end
 
 end
