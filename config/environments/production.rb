@@ -148,4 +148,6 @@ logger.warn('This is an untraced operation.')
 Datadog.tracer.trace('my.operation') { logger.warn('This is a traced operation.') }
 # [2019-01-16 18:38:41 +0000][my_app][WARN][dd.env=production dd.service=billing-api dd.version=2.5.17 dd.trace_id=8545847825299552251 dd.span_id=3711755234730770098] This is a traced operation.
 
+Datadog.configure { |c| c.analytics_enabled = true }
+
 end
