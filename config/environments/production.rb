@@ -112,18 +112,18 @@ Rails.application.configure do
 #datadog config 108-125
 
 #tracing
-require 'ddtrace'
-require 'logger'
+# require 'ddtrace'
+# require 'logger'
 
-ENV['DD_ENV'] = 'prod'
-ENV['DD_SERVICE'] = 'blinddate'
-ENV['DD_VERSION'] = '2.5.17'
+# ENV['DD_ENV'] = 'prod'
+# ENV['DD_SERVICE'] = 'blinddate'
+# ENV['DD_VERSION'] = '2.5.17'
 
-logger = Logger.new(STDOUT)
-logger.progname = 'blinddate'
-logger.formatter  = proc do |severity, datetime, progname, msg|
-  "[#{datetime}][#{progname}][#{severity}][#{Datadog.tracer.active_correlation}] #{msg}\n"
-end
+# logger = Logger.new(STDOUT)
+# logger.progname = 'blinddate'
+# logger.formatter  = proc do |severity, datetime, progname, msg|
+#   "[#{datetime}][#{progname}][#{severity}][#{Datadog.tracer.active_correlation}] #{msg}\n"
+# end
 
 # When no trace is active
 logger.warn('This is an untraced operation.')
