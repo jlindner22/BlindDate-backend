@@ -11,3 +11,5 @@ Datadog.configure do |c|
     # To enable debug mode:
     c.diagnostics.debug = true
   end
+
+  

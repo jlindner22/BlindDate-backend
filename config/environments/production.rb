@@ -2,7 +2,7 @@ Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
   
   #datadog
-  # config.log_tags = [proc { Datadog.tracer.active_correlation.to_s }]
+  config.log_tags = [proc { Datadog.tracer.active_correlation.to_s }]
 
 
   # Code is not reloaded between requests.
@@ -155,11 +155,11 @@ Datadog.configure { |c| c.analytics_enabled = true }
      # Adds IDs as tags to log output
      :dd => {
        # To preserve precision during JSON serialization, use strings for large numbers
-       :trace_id => correlation.trace_id.to_s,
-       :span_id => correlation.span_id.to_s,
        :env => correlation.env.to_s,
        :service => correlation.service.to_s,
-       :version => correlation.version.to_s
+       :version => correlation.version.to_s,
+       :trace_id => correlation.trace_id.to_s,
+       :span_id => correlation.span_id.to_s
      },
      :ddsource => ["ruby"],
      :params => event.payload[:params].reject { |k| %w(controller action).include? k }
