@@ -2,7 +2,7 @@ Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
   
   #datadog
-  config.log_tags = [proc { Datadog.tracer.active_correlation.to_s }]
+  # config.log_tags = [proc { Datadog.tracer.active_correlation.to_s }]
 
 
   # Code is not reloaded between requests.
@@ -112,26 +112,26 @@ Rails.application.configure do
 #datadog config 108-125
 
 #tracing
-# require 'ddtrace'
-# require 'logger'
+require 'ddtrace'
+require 'logger'
 
-# ENV['DD_ENV'] = 'prod'
-# ENV['DD_SERVICE'] = 'blinddate'
-# ENV['DD_VERSION'] = '2.5.17'
+ENV['DD_ENV'] = 'prod'
+ENV['DD_SERVICE'] = 'blinddate'
+ENV['DD_VERSION'] = '2.5.17'
 
-# logger = Logger.new(STDOUT)
-# logger.progname = 'blinddate'
-# logger.formatter  = proc do |severity, datetime, progname, msg|
-#   "[#{datetime}][#{progname}][#{severity}][#{Datadog.tracer.active_correlation}] #{msg}\n"
-# end
+logger = Logger.new(STDOUT)
+logger.progname = 'blinddate'
+logger.formatter  = proc do |severity, datetime, progname, msg|
+  "[#{datetime}][#{progname}][#{severity}][#{Datadog.tracer.active_correlation}] #{msg}\n"
+end
 
-# When no trace is active
-# logger.warn('This is an untraced operation.')
-# [2019-01-16 18:38:41 +0000][my_app][WARN][dd.env=production dd.service=billing-api dd.version=2.5.17 dd.trace_id=0 dd.span_id=0] This is an untraced operation.
+When no trace is active
+logger.warn('This is an untraced operation.')
+[2019-01-16 18:38:41 +0000][my_app][WARN][dd.env=production dd.service=billing-api dd.version=2.5.17 dd.trace_id=0 dd.span_id=0] This is an untraced operation.
 
-# When a trace is active
-# Datadog.tracer.trace('my.operation') { logger.warn('This is a traced operation.') }
-# [2019-01-16 18:38:41 +0000][my_app][WARN][dd.env=production dd.service=billing-api dd.version=2.5.17 dd.trace_id=8545847825299552251 dd.span_id=3711755234730770098] This is a traced operation.
+When a trace is active
+Datadog.tracer.trace('my.operation') { logger.warn('This is a traced operation.') }
+[2019-01-16 18:38:41 +0000][my_app][WARN][dd.env=production dd.service=billing-api dd.version=2.5.17 dd.trace_id=8545847825299552251 dd.span_id=3711755234730770098] This is a traced operation.
 
 Datadog.configure { |c| c.analytics_enabled = true }
 

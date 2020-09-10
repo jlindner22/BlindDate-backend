@@ -12,4 +12,3 @@ Datadog.configure do |c|
     c.diagnostics.debug = true
   end
 
-  
